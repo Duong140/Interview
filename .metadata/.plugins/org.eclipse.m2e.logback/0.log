@@ -2239,3 +2239,5 @@
 2025-01-15 19:36:18,885 [Worker-238: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\Mike La\Desktop\AUTOMATION\Framework\src\test\resources
 2025-01-15 19:37:06,686 [Worker-248: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\Mike La\Desktop\AUTOMATION\Framework\src\main\resources
 2025-01-15 19:37:06,688 [Worker-248: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\Mike La\Desktop\AUTOMATION\Framework\src\test\resources
+2025-01-16 10:24:03,811 [Worker-254: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\Mike La\Desktop\AUTOMATION\NewProject\src\main\resources
+2025-01-16 10:24:03,813 [Worker-254: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\Mike La\Desktop\AUTOMATION\NewProject\src\test\resources
