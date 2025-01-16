@@ -19,35 +19,24 @@ public class ExcelCode {
 	public static WebDriver driver;
 
 
-	public static void main(String[] args) throws IOException{
-		int[] num = {2,6,100,200,300,400,7,9,12,10,5,1,7};
-		
-		for(int i : num) {
-			System.out.println(findPrimeNumbers(i));
-		}
+	public static void main(String[] args){
+	String name = "Mike";
+		System.out.println(reverseString(name));
 	
 	}
 	
-	
-	public static boolean findPrimeNumbers(int num) {
-		//if the input is equal or less then one it will be false
-		if(num <= 1) {
-			return false;
+	public static String reverseString(String str) {
+		//create empty string to store new string
+		String rev = "";
+		
+		for(int i = str.length()-1; i >= 0; i--) {
+			rev += str.charAt(i);
 		}
 		
-		//create a loop to iterate trough each number using square root for efficient code
-		for(int i = 2; i < Math.sqrt(num); i++) {
-			if(num % i == 0) {
-				return false;
-			}
-			
-		}
-		
-		return true;
-		
-		
-		
+		return rev;
 	}
+	
+	
 	
 
 }
