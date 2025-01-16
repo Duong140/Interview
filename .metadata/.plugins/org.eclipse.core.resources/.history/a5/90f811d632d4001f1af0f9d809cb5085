@@ -21,7 +21,7 @@ public class ExcelCode {
 
 	public static void main(String[] args){
 
-		int num = 1221;
+		int num = 121;
 		System.out.println(checkIfNumberIsPalindrome(num));
 	}
 	
@@ -32,7 +32,7 @@ public class ExcelCode {
 		String rev = "";
 		
 		//iterate trough the number in reverse
-		for(int i = number.length()-1; i >= 0; i--) {
+		for(int i = number.length()-1; i > 0; i--) {
 			rev += number.charAt(i);
 			
 		}

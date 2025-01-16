@@ -21,7 +21,7 @@ public class ExcelCode {
 
 	public static void main(String[] args){
 
-		int num = 1221;
+		int num = 12231;
 		System.out.println(checkIfNumberIsPalindrome(num));
 	}
 	

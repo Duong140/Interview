@@ -21,30 +21,25 @@ public class ExcelCode {
 
 	public static void main(String[] args){
 
-		int num = 1221;
-		System.out.println(checkIfNumberIsPalindrome(num));
+			String name = "mmimm";
+			
+			System.out.println(checkIfStringIsPalindrome(name));
 	}
 	
-	public static boolean checkIfNumberIsPalindrome(int num) {
-		//convert input to  a string
-		String number = Integer.toString(num);
-		//String to store reversed string in
+	
+	public static boolean checkIfStringIsPalindrome(String str) {
+		//create a empty string to store new store
 		String rev = "";
 		
-		//iterate trough the number in reverse
-		for(int i = number.length()-1; i >= 0; i--) {
-			rev += number.charAt(i);
-			
+		//iterate trough input and store the character in new string in reverse
+		for(int i = str.length()-1; i >= 0; i--) {
+			rev += str.charAt(i);
 		}
-		int Number = Integer.parseInt(rev);
-		
-		if(num == Number) {
+		if(rev.equals(str)) {
 			return true;
 		}
 		return false;
-		
 	}
-	
 
 }
 
