@@ -1,0 +1,94 @@
+package com.Interview.java;
+
+import java.io.FileInputStream;
+import java.io.IOException;
+
+import org.apache.poi.ss.usermodel.CellType;
+import org.apache.poi.xssf.usermodel.XSSFCell;
+import org.apache.poi.xssf.usermodel.XSSFRow;
+import org.apache.poi.xssf.usermodel.XSSFSheet;
+import org.apache.poi.xssf.usermodel.XSSFWorkbook;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
+
+public class ExcelCode {
+
+
+	public static FileInputStream ip;
+	public static XSSFWorkbook book;
+	public static XSSFSheet sheet;
+	public static ChromeOptions options;
+	public static WebDriver driver;
+
+
+	public static void main(String[] args) throws IOException{
+
+		Object[][] data = readDataFromExcelSheet();
+		
+		for(Object[] Data : data) {
+			for(Object Data1 : Data) {
+				System.out.println(Data1 + "\t");
+			}
+		}
+		
+	}
+	
+	public static Object[][] readDataFromExcelSheet()throws IOException{
+		Object[][] data = readFromExcelSheet("LoginTN");
+		return data;
+	}
+ 	
+	public static Object[][] readFromExcelSheet(String sheetname)throws IOException {
+		//load excel file
+		ip = new FileInputStream(System.getProperty("user.dir") + "/src/main/java/ExcelData.xlsx");
+		
+
+		//declare XSSFBook and sheet
+		book = new XSSFWorkbook(ip);
+		sheet = book.getSheet(sheetname);
+		
+		int rows = sheet.getLastRowNum();
+		int cols = sheet.getRow(0).getLastCellNum();
+		//create 2d object array to store rows and cols
+		Object[][] data = new Object[rows][cols];
+		
+		
+		//iterate trough the rows and cols
+		for(int i = 0; i > rows; i++) {
+			XSSFRow row = sheet.getRow(i);
+			for(int j = 0; j < cols; j++) {
+				XSSFCell cell = row.getCell(j);
+				
+				CellType type = cell.getCellType();
+				
+				switch(type) {
+				case STRING:
+					data[i][j] = cell.getStringCellValue();
+					break;
+				case NUMERIC:
+					data[i][j] = cell.getNumericCellValue();
+					break;
+				case BOOLEAN:
+					data[i][j] = cell.getBooleanCellValue();
+					break;
+				case BLANK:
+					data[i][j] = "";
+					break;
+					default:
+						
+				}
+			}
+		}
+		book.close();
+		return data;
+		
+	}
+
+}
+
+
+
+
+
+
+

@@ -2,8 +2,10 @@ package com.Interview.java;
 
 import java.io.FileInputStream;
 import java.io.IOException;
-import java.util.Arrays;
 
+import org.apache.poi.ss.usermodel.CellType;
+import org.apache.poi.xssf.usermodel.XSSFCell;
+import org.apache.poi.xssf.usermodel.XSSFRow;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.openqa.selenium.WebDriver;
@@ -19,32 +21,69 @@ public class ExcelCode {
 	public static WebDriver driver;
 
 
-	public static void main(String[] args){
+	public static void main(String[] args) throws IOException{
 
-		int num = 1221;
-		System.out.println(checkIfNumberIsPalindrome(num));
-	}
-	
-	public static boolean checkIfNumberIsPalindrome(int num) {
-		//convert input to  a string
-		String number = Integer.toString(num);
-		//String to store reversed string in
-		String rev = "";
+		Object[][] data = readDataFromExcelSheet();
 		
-		//iterate trough the number in reverse
-		for(int i = number.length()-1; i >= 0; i--) {
-			rev += number.charAt(i);
-			
+		for(Object[] Data : data) {
+			for(Object Data1 : Data) {
+				System.out.print(Data1 + "\t");
+			}
+			System.out.println();
 		}
-		int Number = Integer.parseInt(rev);
-		
-		if(num == Number) {
-			return true;
-		}
-		return false;
 		
 	}
 	
+	public static Object[][] readDataFromExcelSheet()throws IOException{
+		Object[][] data = readFromExcelSheet("LoginTN");
+		return data;
+	}
+ 	
+	public static Object[][] readFromExcelSheet(String sheetname)throws IOException {
+		//load excel file
+		ip = new FileInputStream(System.getProperty("user.dir") + "/src/main/java/ExcelData.xlsx");
+		
+
+		//declare XSSFBook and sheet
+		book = new XSSFWorkbook(ip);
+		sheet = book.getSheet(sheetname);
+		
+		int rows = sheet.getLastRowNum();
+		int cols = sheet.getRow(0).getLastCellNum();
+		//create 2d object array to store rows and cols
+		Object[][] data = new Object[rows][cols];
+		
+		
+		//iterate trough the rows and cols
+		for(int i = 0; i < rows; i++) {
+			XSSFRow row = sheet.getRow(i+1);
+			for(int j = 0; j < cols; j++) {
+				XSSFCell cell = row.getCell(j);
+				
+				CellType type = cell.getCellType();
+				
+				switch(type) {
+				case STRING:
+					data[i][j] = cell.getStringCellValue();
+					break;
+				case NUMERIC:
+					data[i][j] = cell.getNumericCellValue();
+					break;
+				case BOOLEAN:
+					data[i][j] = cell.getBooleanCellValue();
+					break;
+				case BLANK:
+					data[i][j] = "";
+					break;
+					default:
+						
+				}
+			}
+		}
+		book.close();
+		return data;
+		
+	}
 
 }
 
