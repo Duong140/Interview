@@ -20,37 +20,35 @@ public class ExcelCode {
 
 
 	public static void main(String[] args) throws IOException{
+		int[] num = {2,6,100,200,300,400,7,9,12,10,5,1,7};
+		
+		for(int i : num) {
+			System.out.println(findPrimeNumbers(i));
+		}
 	
-		String name = "Mike";
-		String name1 = "I K Ef m";
-		System.out.println(findAnagrams(name,name1));
 	}
 	
 	
-		
-	public static boolean findAnagrams(String str1, String str2) {
-		//git rid of all whitespaces and convert to lower case
-		str1 = str1.replaceAll("\\s", "").toLowerCase();
-		str2 = str2.replaceAll("\\s", "").toLowerCase();
-		
-		
-		//check if the strings are the same size if not return false
-		if(str1.length() != str2.length()) {
+	public static boolean findPrimeNumbers(int num) {
+		//if the input is equal or less then one it will be false
+		if(num <= 1) {
 			return false;
 		}
 		
+		//create a loop to iterate trough each number using square root for efficient code
+		for(int i = 2; i < Math.sqrt(num); i++) {
+			if(num % i == 0) {
+				return false;
+			}
+			
+		}
 		
-		//convert strigns to char arrays
-		char[] arr1 = str1.toCharArray();
-		char[] arr2 = str2.toCharArray();
+		return true;
 		
-		//sort the array
-		Arrays.sort(arr1);
-		Arrays.sort(arr2);
 		
-		return Arrays.equals(arr1, arr2);
 		
 	}
+	
 
 }
 
