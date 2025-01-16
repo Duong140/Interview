@@ -20,14 +20,29 @@ public class ExcelCode {
 
 
 	public static void main(String[] args){
+	String hey = "Hello my name is Duong!";
 	
+	System.out.println(reverseSentence(hey));
 	
 	}
 	
 	
 	
-	public static void reverseSentence(String str) {
+	public static String reverseSentence(String str) {
 		//put input into a string array
+		String[] words = str.split(" ");
+		//new string to store new value in
+		String result = "";
+		
+		//iterate trough the sentence and store each word
+		for(int i = words.length-1; i >= 0; i--) {
+			result += words[i];
+			if(i > 0) {
+				result += " ";
+			}
+		}
+		
+		return result;
 	}
 
 }

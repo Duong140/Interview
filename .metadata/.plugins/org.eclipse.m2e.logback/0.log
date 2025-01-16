@@ -2263,3 +2263,5 @@
 2025-01-16 11:19:15,573 [Worker-268: Launching ExcelCode (1)] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\Mike La\Desktop\AUTOMATION\NewProject\src\test\resources
 2025-01-16 11:27:32,136 [Worker-271: Launching ExcelCode (1)] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\Mike La\Desktop\AUTOMATION\NewProject\src\main\resources
 2025-01-16 11:27:32,139 [Worker-271: Launching ExcelCode (1)] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\Mike La\Desktop\AUTOMATION\NewProject\src\test\resources
+2025-01-16 12:05:26,215 [Worker-282: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\Mike La\Desktop\AUTOMATION\NewProject\src\main\resources
+2025-01-16 12:05:26,216 [Worker-282: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\Mike La\Desktop\AUTOMATION\NewProject\src\test\resources
