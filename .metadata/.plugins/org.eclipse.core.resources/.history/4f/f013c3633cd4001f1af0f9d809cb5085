@@ -21,7 +21,7 @@ public class ExcelCode {
 
 
 	public static void main(String[] args) throws IOException{
-		System.out.println(countWords("Hello buddy, hows it going there"));
+		System.out.println(countWords("Hello buddy"));
 
 	}
 
