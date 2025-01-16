@@ -2,10 +2,9 @@ package com.Interview.java;
 
 import java.io.FileInputStream;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
-import org.apache.poi.ss.usermodel.CellType;
-import org.apache.poi.xssf.usermodel.XSSFCell;
-import org.apache.poi.xssf.usermodel.XSSFRow;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.openqa.selenium.WebDriver;
@@ -23,66 +22,26 @@ public class ExcelCode {
 
 	public static void main(String[] args) throws IOException{
 
-		Object[][] data = readDataFromExcelSheet();
-		
-		for(Object[] Data : data) {
-			for(Object Data1 : Data) {
-				System.out.print(Data1 + "\t");
-			}
-			System.out.println();
-		}
-		
-	}
 	
-	public static Object[][] readDataFromExcelSheet()throws IOException{
-		Object[][] data = readFromExcelSheet("LoginTN");
-		return data;
+		System.out.println(fizzBuzz(15));
 	}
- 	
-	public static Object[][] readFromExcelSheet(String sheetname)throws IOException {
-		//load excel file
-		ip = new FileInputStream(System.getProperty("user.dir") + "/src/main/java/ExcelData.xlsx");
-		
 
-		//declare XSSFBook and sheet
-		book = new XSSFWorkbook(ip);
-		sheet = book.getSheet(sheetname);
+ 	
+	public static List<String> fizzBuzz(int num) {
+		List<String> storage = new ArrayList<>();
 		
-		int rows = sheet.getLastRowNum();
-		int cols = sheet.getRow(0).getLastCellNum();
-		//create 2d object array to store rows and cols
-		Object[][] data = new Object[rows][cols];
-		
-		
-		//iterate trough the rows and cols
-		for(int i = 0; i < rows; i++) {
-			XSSFRow row = sheet.getRow(i+1);
-			for(int j = 0; j < cols; j++) {
-				XSSFCell cell = row.getCell(j);
-				
-				CellType type = cell.getCellType();
-				
-				switch(type) {
-				case STRING:
-					data[i][j] = cell.getStringCellValue();
-					break;
-				case NUMERIC:
-					data[i][j] = cell.getNumericCellValue();
-					break;
-				case BOOLEAN:
-					data[i][j] = cell.getBooleanCellValue();
-					break;
-				case BLANK:
-					data[i][j] = "";
-					break;
-					default:
-						
-				}
+		for(int i = 1; i <= num; i++) {
+			if(i % 3 == 0 && i % 5 == 0) {
+				storage.add("FizzBuzz");
+			} else if(i % 3 == 0) {
+				storage.add("Fizz");
+			} else if(i % 5 == 0) {
+				storage.add("Buzz");
+			} else {
+				storage.add(String.valueOf(i));
 			}
 		}
-		book.close();
-		return data;
-		
+		return storage;
 	}
 
 }
