@@ -20,8 +20,7 @@ public class ExcelCode {
 
 
 	public static void main(String[] args) throws IOException{
-		LocalDateTime time = LocalDateTime.now();
-		System.out.println(time);
+	
 	}
 	
 	

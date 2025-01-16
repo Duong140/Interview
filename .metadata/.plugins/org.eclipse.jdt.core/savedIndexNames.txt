@@ -2,7 +2,6 @@ INDEX VERSION 1.134+C:\Users\Mike La\Desktop\AUTOMATION\.metadata\.plugins\org.e
 663307052.index
 4114212394.index
 3974923892.index
-1414767474.index
 3197338717.index
 3413725848.index
 3934093090.index
