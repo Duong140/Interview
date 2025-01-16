@@ -1,0 +1,22 @@
+package com.Example.Utilities;
+
+import java.time.LocalDateTime;
+
+import org.testng.annotations.Test;
+
+public class Util {
+	
+	
+	@Test
+	public static void print() {
+		String print = emailWithTimeStamp();
+		System.out.println(print);
+	}
+	
+	public static String emailWithTimeStamp() {
+		LocalDateTime date = LocalDateTime.now();
+		String TimeStamp = date.toString().replaceAll(" ", "_").replaceAll(":", "_");
+		return "Seleniumpanda" + TimeStamp + "@gmail.com";
+	}
+
+}

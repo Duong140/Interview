@@ -1,0 +1,59 @@
+package com.Interview.java;
+
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
+
+import org.apache.poi.xssf.usermodel.XSSFSheet;
+import org.apache.poi.xssf.usermodel.XSSFWorkbook;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
+
+public class ExcelCode {
+
+
+	public static FileInputStream ip;
+	public static XSSFWorkbook book;
+	public static XSSFSheet sheet;
+	public static ChromeOptions options;
+	public static WebDriver driver;
+
+
+	public static void main(String[] args) throws IOException{
+
+
+		System.out.println(palinedrome(120321));
+
+
+	}
+
+
+	public static boolean palinedrome(int num) {
+		
+		String numstr = Integer.toString(num);
+		String result = "";
+		
+		for(int i = numstr.length()-1; i >= 0; i--) {
+			result += numstr.charAt(i);
+		}
+		
+		int result1 = Integer.parseInt(result);
+		
+		if(num != result1) {
+			return false;
+		}
+		return true;
+		
+		
+	}
+
+
+}
+
+
+
+
+
+
+

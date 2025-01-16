@@ -1,0 +1,17 @@
+package com.Example.Utilities;
+
+import java.sql.Date;
+
+import org.testng.annotations.Test;
+
+public class Util {
+	
+	
+	@Test
+	public static String emailWithTimeStamp() {
+		Date date = new Date();
+		String TimeStamp = date.toString().replaceAll(" ", "_").replaceAll(":", "_");
+		System.out.println(date);
+	}
+
+}

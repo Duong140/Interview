@@ -1,0 +1,50 @@
+package com.Interview.java;
+
+import java.io.FileInputStream;
+import java.util.ArrayList;
+import java.util.List;
+
+import org.apache.poi.xssf.usermodel.XSSFSheet;
+import org.apache.poi.xssf.usermodel.XSSFWorkbook;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
+
+import ch.qos.logback.core.recovery.ResilientSyslogOutputStream;
+
+public class ExcelCode {
+
+
+	public static FileInputStream ip;
+	public static XSSFWorkbook book;
+	public static XSSFSheet sheet;
+	public static ChromeOptions options;
+	public static WebDriver driver;
+
+
+	public static void main(String[] args){
+		System.out.println(fizzBuzz(7));
+	}
+	
+	
+	public static String fizzBuzz(int num){
+		
+		 if(num % 3 == 0 && num % 5 == 0) {
+			 return "FizzBuzz";
+		 } else if(num % 3 == 0) {
+			 return "Fizz";
+		 } else if(num % 5 == 0) {
+			 return "Buzz";
+		 } else {
+			 return String.valueOf(num);
+		 }
+
+	}
+
+}
+
+
+
+
+
+
+

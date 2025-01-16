@@ -1,0 +1,55 @@
+package com.Interview.java;
+
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.util.Arrays;
+
+import org.apache.poi.xssf.usermodel.XSSFSheet;
+import org.apache.poi.xssf.usermodel.XSSFWorkbook;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
+
+public class ExcelCode {
+
+
+	public static FileInputStream ip;
+	public static XSSFWorkbook book;
+	public static XSSFSheet sheet;
+	public static ChromeOptions options;
+	public static WebDriver driver;
+
+
+	public static void main(String[] args) throws IOException{
+			String hello = "Hello everyone, hows your day going!!";
+			System.out.println(reverseASentence(hello));
+
+	}
+
+
+	public static String reverseASentence(String str) {
+		
+		//create a String array and split where there are white spaces
+		String[] words = str.split(" ");
+		//String to store the result
+		String result = "";
+		
+		//iterate trough the string
+		for(int i = words.length-1; i >= 0; i--) {
+			result += words[i];
+			if(i > 0) {
+				result += " ";
+			}
+		}
+		return result;
+	}
+	
+
+
+}
+
+
+
+
+
+
+

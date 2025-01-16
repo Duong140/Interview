@@ -1,0 +1,13 @@
+package com.Example.Utilities;
+
+import java.sql.Date;
+
+public class Util {
+	
+	public static String emailWithTimeStamp() {
+		Date date = new Date();
+		String TimeStamp = date.toString().replaceAll(" ", "_").replaceAll(":", "_");
+		return "seleniumpanda" + TimeStamp + "@gmail.com";
+	}
+
+}

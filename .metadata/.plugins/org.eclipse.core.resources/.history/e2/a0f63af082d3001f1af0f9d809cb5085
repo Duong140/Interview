@@ -1,0 +1,32 @@
+package com.Example.TestBase;
+
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.util.Properties;
+
+import org.openqa.selenium.WebDriver;
+
+public class TestBase {
+	
+	
+	public FileInputStream ip;
+	public WebDriver driver;
+	public Properties ConfigData;
+	public Properties TestData;
+	
+	public TestBase()throws IOException {
+		ConfigData = new Properties();
+		ip = new FileInputStream(System.getProperty("user.dir") + "\\src\\main\\java\\com\\Example\\ConfigData\\ConfigData.properties");
+		ConfigData.load(ip);
+		
+		TestData = new Properties();
+		ip = new FileInputStream(System.getProperty("user.dir") + "\\src\\test\\java\\come\\Example\\TestData\\TestData.properties");
+		TestData.load(ip);
+	}
+	
+	public void openBrowserAndDirectToUrl() {
+		
+	}
+	
+
+}

@@ -1,0 +1,51 @@
+package com.Interview.java;
+
+import java.io.FileInputStream;
+
+import org.apache.poi.xssf.usermodel.XSSFSheet;
+import org.apache.poi.xssf.usermodel.XSSFWorkbook;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
+
+public class ExcelCode {
+
+
+	public static FileInputStream ip;
+	public static XSSFWorkbook book;
+	public static XSSFSheet sheet;
+	public static ChromeOptions options;
+	public static WebDriver driver;
+	
+	
+	public static void main(String[] args){
+		String name = "mikem";
+		String rev = "";
+		
+		
+		int len = name.length() - 1;
+		
+		
+		for(int i = len; i >= 0; i--) {
+			rev += name.charAt(i);
+			
+			
+		}
+		System.out.println(rev);
+		
+	
+	}
+	 
+
+	
+	
+	
+	
+	
+
+}
+
+
+
+
+
+

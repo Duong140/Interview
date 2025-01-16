@@ -1,0 +1,81 @@
+package com.Interview.java;
+
+import java.io.FileInputStream;
+import java.io.IOException;
+
+import org.apache.poi.ss.usermodel.CellType;
+import org.apache.poi.xssf.usermodel.XSSFCell;
+import org.apache.poi.xssf.usermodel.XSSFRow;
+import org.apache.poi.xssf.usermodel.XSSFSheet;
+import org.apache.poi.xssf.usermodel.XSSFWorkbook;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
+
+public class ExcelCode {
+
+
+	public static FileInputStream ip;
+	public static XSSFWorkbook book;
+	public static XSSFSheet sheet;
+	public static ChromeOptions options;
+	public static WebDriver driver;
+
+
+	public static void main(String[] args) throws IOException{
+		
+		Object[][] excel = readFromExcelSheet("LoginTN");
+		
+		for(Object[] i : excel) {
+			for(Object j : i) {
+				System.out.print(j + "\t");
+			}
+			System.out.println();
+		}
+	
+	}
+	
+	public static Object[][] readFromExcelSheet(String sheetname)throws IOException{
+		ip = new FileInputStream(System.getProperty("user.dir") + "/src/main/java/ExcelData.xlsx"); 
+		
+		book = new XSSFWorkbook(ip);
+		sheet = book.getSheet(sheetname);
+		
+		int rows = sheet.getPhysicalNumberOfRows();
+		int cols = sheet.getRow(0).getLastCellNum();
+		
+		Object[][] data = new Object[rows][cols];
+		
+		for(int i = 1; i < rows; i++) {
+			XSSFRow row = sheet.getRow(i);
+			for(int j = 0; j < cols; j++) {
+				XSSFCell cell = row.getCell(j);
+				
+				CellType type = cell.getCellType();
+				
+				switch(type) {
+				case STRING:
+					data[i][j] = cell.getStringCellValue();
+					break;
+				case NUMERIC:
+					data[i][j] = cell.getNumericCellValue();
+					break;
+				case BOOLEAN:
+					data[i][j] = cell.getBooleanCellValue();
+					break;
+					default:
+				}
+			}
+		}
+		book.close();
+		return data;
+	}
+
+
+}
+
+
+
+
+
+
+

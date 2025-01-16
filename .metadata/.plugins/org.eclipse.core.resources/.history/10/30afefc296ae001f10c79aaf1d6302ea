@@ -1,0 +1,62 @@
+package com.Interview.java;
+
+import java.io.FileInputStream;
+
+import java.io.IOException;
+import java.util.Arrays;
+
+import org.apache.poi.ss.usermodel.CellType;
+import org.apache.poi.xssf.usermodel.XSSFCell;
+import org.apache.poi.xssf.usermodel.XSSFRow;
+import org.apache.poi.xssf.usermodel.XSSFSheet;
+import org.apache.poi.xssf.usermodel.XSSFWorkbook;
+
+public class ExcelCode {
+
+
+	public static FileInputStream ip;
+	public static XSSFWorkbook book;
+	public static XSSFSheet sheet;
+
+	public static void main(String[] args) throws Exception {
+
+			String name = "Mike";
+			String name1 = "I E K M ";
+			
+			if(anagramCheck(name, name1)) {
+				System.out.println(name + " and " + name1 + " is a anagram!");
+			} else {
+				System.out.println(name + " and " + name1 + " is not a anagram!");
+			}
+	
+		}
+	
+	
+	
+	public static boolean anagramCheck(String str1, String str2) {
+		
+		str1 = str1.replaceAll("\\s+", "").toLowerCase();
+		str2 = str2.replaceAll("\\s+", "").toLowerCase();
+		
+		if(str1.length() != str2.length()) {
+			return false;
+		}
+		
+		char[] arr1 = str1.toCharArray();
+		char[] arr2 = str2.toCharArray();
+		
+		Arrays.sort(arr1);
+		Arrays.sort(arr2);
+		
+		return Arrays.equals(arr1, arr2);
+		
+	}
+
+
+	}
+
+
+	
+
+
+

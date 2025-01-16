@@ -1,0 +1,51 @@
+package com.Interview.java;
+
+import java.io.FileInputStream;
+
+import java.io.IOException;
+import java.util.Arrays;
+
+import org.apache.poi.ss.usermodel.CellType;
+import org.apache.poi.xssf.usermodel.XSSFCell;
+import org.apache.poi.xssf.usermodel.XSSFRow;
+import org.apache.poi.xssf.usermodel.XSSFSheet;
+import org.apache.poi.xssf.usermodel.XSSFWorkbook;
+
+public class ExcelCode {
+
+
+	public static FileInputStream ip;
+	public static XSSFWorkbook book;
+	public static XSSFSheet sheet;
+
+	public static void main(String[] args) throws Exception {
+		
+		int[][] num = {{12,5,6,18,94,9,15,456,486},{9,8,84,51,589,46,16,13,1,27}};
+		
+		for(int[] i : num) {
+			for(int j : i) {
+				System.out.println(j + " is " + primeCheck(j));
+			}
+		}
+	}
+
+	
+	
+	public static boolean primeCheck(int num) {
+		if(num <= 1) {
+			return false;
+		}
+
+		for(int i = 2; i < Math.sqrt(num); i++) {
+			if(num % i == 0) {
+				return false;
+			}
+		}
+		
+		return true;
+		
+		
+	}
+
+
+}

@@ -1,0 +1,65 @@
+package com.Interview.java;
+
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.util.Arrays;
+
+import org.apache.poi.xssf.usermodel.XSSFSheet;
+import org.apache.poi.xssf.usermodel.XSSFWorkbook;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
+
+public class ExcelCode {
+
+
+	public static FileInputStream ip;
+	public static XSSFWorkbook book;
+	public static XSSFSheet sheet;
+	public static ChromeOptions options;
+	public static WebDriver driver;
+
+
+	public static void main(String[] args){
+		int[] num = {454,123,121,656,8899};
+		
+		for(int i : num) {
+
+			if(checkIfNumberIsPalindrome(i)) {
+				System.out.println(i + " is a palindrome!");
+			} else {
+				System.out.println(i + " is not a palindrome! " );
+			}
+		}
+
+	}
+
+
+	public static boolean checkIfNumberIsPalindrome(int num) {
+		//Make the integer a String
+		String number = String.valueOf(num);
+		//empty string to store the new reversed value
+		String rev = "";
+		
+		//iterate trough the string to reverse it
+		for(int i = number.length()-1; i >= 0; i--) {
+			rev += number.charAt(i);
+		}
+		//convert string back to integer
+		int number1 = Integer.valueOf(rev);
+		//check to see if numbers are different if different return false otherwise return true
+		if(number1 != num) {
+			return false;
+		}
+		return true;
+	}
+	
+
+
+}
+
+
+
+
+
+
+

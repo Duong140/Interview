@@ -1,0 +1,49 @@
+package com.Interview.java;
+
+import java.io.FileInputStream;
+import java.util.ArrayList;
+import java.util.List;
+
+import org.apache.poi.xssf.usermodel.XSSFSheet;
+import org.apache.poi.xssf.usermodel.XSSFWorkbook;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
+
+public class ExcelCode {
+
+
+	public static FileInputStream ip;
+	public static XSSFWorkbook book;
+	public static XSSFSheet sheet;
+	public static ChromeOptions options;
+	public static WebDriver driver;
+	
+	
+	public static void main(String[] args){
+		list(10);
+	
+	}
+	
+	public static void list(int n) {
+		
+		List<Integer> nums = new ArrayList<>();
+		
+		for(int i = 1; i <= n;i++) {
+			nums.add(i);
+			
+		
+			
+		}
+		System.out.println(nums.get(0) + nums.get(1) + nums.get(2) + nums.get(3) + nums.get(4) + nums.get(5) + nums.get(6) + nums.get(7) + nums.get(8) + nums.get(9) /2);
+		
+		
+	}
+	
+
+}
+
+
+
+
+
+

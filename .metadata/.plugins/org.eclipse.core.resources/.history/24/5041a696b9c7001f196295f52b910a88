@@ -1,0 +1,64 @@
+package com.Interview.java;
+
+import java.io.FileInputStream;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
+import org.apache.poi.xssf.usermodel.XSSFSheet;
+import org.apache.poi.xssf.usermodel.XSSFWorkbook;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
+
+public class ExcelCode {
+
+
+	public static FileInputStream ip;
+	public static XSSFWorkbook book;
+	public static XSSFSheet sheet;
+	public static ChromeOptions options;
+	public static WebDriver driver;
+	
+	
+	public static void main(String[] args){
+		
+		String name = "Mike";
+		String name1 = "I E K m";
+	
+		if(anagrams(name,name1)) {
+			System.out.println(name + " and " + name1 + " are anagrams");
+		}else {
+			System.out.println(name + " and " + name1 + " are not anagrams");
+		}
+
+	}
+	 
+	
+			
+	  public static boolean anagrams(String str1, String str2) {
+		  str1 = str1.replaceAll("\s++", "").toLowerCase();
+		  str2 = str2.replaceAll("\s++", "").toLowerCase();
+		  
+		  
+		  if(str1.length() != str2.length()) {
+			  return false;
+		  }
+		  
+		  char[] arr1 = str1.toCharArray();
+		  char[] arr2 = str2.toCharArray();
+		  
+		  Arrays.sort(arr1);
+		  Arrays.sort(arr2);
+		  
+		  return Arrays.equals(arr1, arr2);
+	  }
+	    
+
+	 }
+	 
+
+
+
+
+
+

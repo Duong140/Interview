@@ -1,0 +1,62 @@
+package com.Interview.java;
+
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.util.Arrays;
+
+import org.apache.poi.ss.usermodel.CellType;
+import org.apache.poi.xssf.usermodel.XSSFCell;
+import org.apache.poi.xssf.usermodel.XSSFRow;
+import org.apache.poi.xssf.usermodel.XSSFSheet;
+import org.apache.poi.xssf.usermodel.XSSFWorkbook;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
+
+public class ExcelCode {
+
+
+	public static FileInputStream ip;
+	public static XSSFWorkbook book;
+	public static XSSFSheet sheet;
+	public static ChromeOptions options;
+	public static WebDriver driver;
+
+
+	public static void main(String[] args){
+
+	int[] num = {21,21,3,13,3,1,12,13,13,3,123,124,24,5,45,6,67,5,6};
+	
+	for(int i : num) {
+		System.out.println(primeCheck(i));
+	}
+	
+	
+	
+
+}
+
+
+	public static boolean primeCheck(int num) {
+		if(num <= 1) {
+			return false;
+		}
+		
+		
+		for(int i = 1; i < Math.sqrt(num); i++) {
+			if(num % i == 0) {
+				return false;
+			}
+		}
+		
+		return true;
+	}
+	
+
+}
+
+
+
+
+
+
+
