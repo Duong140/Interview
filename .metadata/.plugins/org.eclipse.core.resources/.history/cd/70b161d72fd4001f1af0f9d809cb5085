@@ -20,25 +20,29 @@ public class ExcelCode {
 
 
 	public static void main(String[] args){
-
-			String name = "mmimm";
-			
-			System.out.println(checkIfStringIsPalindrome(name));
+	String hey = "Hello my name is Duong!";
+	
+	System.out.println(reverseSentence(hey));
+	
 	}
 	
 	
-	public static boolean checkIfStringIsPalindrome(String str) {
-		//create a empty string to store new store
-		String rev = "";
+	
+	public static String reverseSentence(String str) {
+		//put input into a string array
+		String[] words = str.split(" ");
+		//new string to store new value in
+		String result = "";
 		
-		//iterate trough input and store the character in new string in reverse
-		for(int i = str.length()-1; i >= 0; i--) {
-			rev += str.charAt(i);
+		//iterate trough the sentence and store each word
+		for(int i = words.length-1; i >= 0; i--) {
+			result += words[i];
+			if(i > 0) {
+				result += " ";
+			}
 		}
-		if(rev.equals(str)) {
-			return true;
-		}
-		return false;
+		
+		return result;
 	}
 
 }

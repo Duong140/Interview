@@ -21,7 +21,7 @@ public class ExcelCode {
 
 	public static void main(String[] args){
 
-			String name = "mmimm";
+			String name = "mimm";
 			
 			System.out.println(checkIfStringIsPalindrome(name));
 	}

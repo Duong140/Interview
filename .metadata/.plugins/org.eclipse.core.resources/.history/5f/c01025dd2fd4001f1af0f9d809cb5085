@@ -21,7 +21,7 @@ public class ExcelCode {
 
 	public static void main(String[] args){
 
-			String name = "mmimm";
+			String name = "mim";
 			
 			System.out.println(checkIfStringIsPalindrome(name));
 	}
@@ -32,7 +32,7 @@ public class ExcelCode {
 		String rev = "";
 		
 		//iterate trough input and store the character in new string in reverse
-		for(int i = str.length()-1; i >= 0; i--) {
+		for(int i = str.length()-1; i > 0; i--) {
 			rev += str.charAt(i);
 		}
 		if(rev.equals(str)) {
