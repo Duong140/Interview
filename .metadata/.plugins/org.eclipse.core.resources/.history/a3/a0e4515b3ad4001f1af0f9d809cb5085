@@ -22,26 +22,26 @@ public class ExcelCode {
 
 	public static void main(String[] args) throws IOException{
 
-	int[] num = {5000,200,100,300,5000,123456,2003,2};
-	int[] result = findSmallestLargest(num);
-	System.out.println(result[0] + " " + result[1]);
+	
+		System.out.println(fizzBuzz(15));
 	}
 
  	
-	public static int[] findSmallestLargest(int[] num) {
-		int smallest = num[0];
-		int largest = num[0];
+	public static List<String> fizzBuzz(int num) {
+		List<String> storage = new ArrayList<>();
 		
-		for(int i = 0; i < num.length; i++) {
-			if(num[i] > largest) {
-				largest = num[i];
-			} 
-			if(num[i] < smallest) {
-				smallest = num[i];
+		for(int i = 1; i <= num; i++) {
+			if(i % 3 == 0 && i % 5 == 0) {
+				storage.add("FizzBuzz");
+			} else if(i % 3 == 0) {
+				storage.add("Fizz");
+			} else if(i % 5 == 0) {
+				storage.add("Buzz");
+			} else {
+				storage.add(String.valueOf(i));
 			}
 		}
-		
-		return new int[] {smallest,largest};
+		return storage;
 	}
 
 }

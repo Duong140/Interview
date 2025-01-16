@@ -33,7 +33,7 @@ public class ExcelCode {
 		int largest = num[0];
 		
 		for(int i = 0; i < num.length; i++) {
-			if(num[i] > largest) {
+			if(num[i] < largest) {
 				largest = num[i];
 			} 
 			if(num[i] < smallest) {
