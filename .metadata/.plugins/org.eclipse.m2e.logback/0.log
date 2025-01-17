@@ -2311,3 +2311,7 @@
 2025-01-16 14:01:52,869 [Worker-337: Launching ExcelCode (1)] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\Mike La\Desktop\AUTOMATION\NewProject\src\test\resources
 2025-01-16 14:02:10,913 [Worker-333: Launching ExcelCode (1)] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\Mike La\Desktop\AUTOMATION\NewProject\src\main\resources
 2025-01-16 14:02:10,915 [Worker-333: Launching ExcelCode (1)] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\Mike La\Desktop\AUTOMATION\NewProject\src\test\resources
+2025-01-16 14:43:03,345 [Worker-338: Launching ExcelCode (1)] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\Mike La\Desktop\AUTOMATION\NewProject\src\main\resources
+2025-01-16 14:43:03,347 [Worker-338: Launching ExcelCode (1)] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\Mike La\Desktop\AUTOMATION\NewProject\src\test\resources
+2025-01-16 14:43:46,824 [Worker-342: Launching ExcelCode (1)] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\Mike La\Desktop\AUTOMATION\NewProject\src\main\resources
+2025-01-16 14:43:46,825 [Worker-342: Launching ExcelCode (1)] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\Mike La\Desktop\AUTOMATION\NewProject\src\test\resources

@@ -28,7 +28,7 @@ public class ExcelCode {
  	
 	public static int countWords(String str) {
 		//convert into a string array
-		String[] words = str.split(" ");
+		String[] words = str.replaceAll(" ", "").split("");
 		
 		int result = words.length;
 		return result;
