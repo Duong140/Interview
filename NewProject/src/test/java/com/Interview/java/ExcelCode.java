@@ -21,17 +21,20 @@ public class ExcelCode {
 
 
 	public static void main(String[] args) throws IOException{
-		System.out.println(countWords("Hello buddy, hows it going there"));
+			int n = 5;
+			for(int i = 0; i < n; i++) {
+				System.out.print(fibonacci(i)+" ");
+			}
 
 	}
 
  	
-	public static int countWords(String str) {
-		//convert into a string array
-		String[] words = str.replaceAll(" ", "").split("");
+	public static int fibonacci(int n) {
+		if(n <= 1) {
+			return n;
+		}
 		
-		int result = words.length;
-		return result;
+		return fibonacci(n - 1) + fibonacci(n - 2);
 	}
 
 }
