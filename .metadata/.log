@@ -6,10 +6,10 @@ BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_US
 Framework arguments:  -product org.eclipse.epp.package.jee.product
 Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.eclipse.epp.package.jee.product
 
-This is a continuation of log file C:\Users\Mike La\Desktop\AUTOMATION\.metadata\.bak_7.log
-Created Time: 2025-01-17 16:35:36.554
+This is a continuation of log file C:\Users\Mike La\Desktop\AUTOMATION\.metadata\.bak_0.log
+Created Time: 2025-01-19 08:20:56.912
 
-!ENTRY org.eclipse.pde.bnd.ui 4 0 2025-01-17 16:35:36.554
+!ENTRY org.eclipse.pde.bnd.ui 4 0 2025-01-19 08:20:56.912
 !MESSAGE bundle org.eclipse.pde.bnd.ui:1.1.100.v20240806-2133 (1673)[org.eclipse.pde.bnd.ui.internal.Auxiliary(137)] : Error during instantiation of the implementation object
 !STACK 0
 java.lang.reflect.InvocationTargetException
@@ -46,30 +46,16 @@ java.lang.reflect.InvocationTargetException
 	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:434)
 	at org.eclipse.osgi.internal.loader.ModuleClassLoader.loadClass(ModuleClassLoader.java:174)
 	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:526)
-	at org.eclipse.jdt.internal.compiler.ast.Statement.containsPatternVariable(Statement.java:510)
-	at org.eclipse.jdt.internal.compiler.ast.Statement.containsPatternVariable(Statement.java:506)
-	at org.eclipse.jdt.internal.codeassist.impl.AssistParser.buildInitialRecoveryState(AssistParser.java:368)
-	at org.eclipse.jdt.internal.compiler.parser.Parser.resumeOnSyntaxError(Parser.java:14054)
-	at org.eclipse.jdt.internal.compiler.parser.Parser.parse(Parser.java:12590)
-	at org.eclipse.jdt.internal.codeassist.impl.AssistParser.parseBlockStatements(AssistParser.java:2112)
-	at org.eclipse.jdt.internal.codeassist.impl.AssistParser.parseBlockStatements(AssistParser.java:1948)
-	at org.eclipse.jdt.internal.codeassist.impl.Engine.parseBlockStatements(Engine.java:350)
-	at org.eclipse.jdt.internal.codeassist.impl.Engine.parseBlockStatements(Engine.java:313)
-	at org.eclipse.jdt.internal.codeassist.SelectionEngine.select(SelectionEngine.java:1080)
-	at org.eclipse.jdt.internal.core.Openable.codeSelect(Openable.java:166)
-	at org.eclipse.jdt.internal.core.CompilationUnit.codeSelect(CompilationUnit.java:382)
-	at org.eclipse.jdt.internal.core.CompilationUnit.codeSelect(CompilationUnit.java:375)
-	at org.eclipse.jdt.internal.ui.text.java.hover.AbstractJavaEditorTextHover.getJavaElementsAt(AbstractJavaEditorTextHover.java:121)
-	at org.eclipse.jdt.internal.ui.text.java.hover.JavadocHover.lambda$0(JavadocHover.java:713)
-	at org.eclipse.jdt.internal.core.JavaModelManager.cacheZipFiles(JavaModelManager.java:5770)
-	at org.eclipse.jdt.internal.core.JavaModelManager.callReadOnly(JavaModelManager.java:5759)
-	at org.eclipse.jdt.core.JavaCore.callReadOnly(JavaCore.java:6188)
-	at org.eclipse.jdt.internal.ui.text.java.hover.JavadocHover.internalGetHoverInfo(JavadocHover.java:713)
-	at org.eclipse.jdt.internal.ui.text.java.hover.JavadocHover.getHoverInfo2(JavadocHover.java:709)
-	at org.eclipse.jdt.internal.ui.text.java.hover.BestMatchHover.getHoverInfo2(BestMatchHover.java:163)
-	at org.eclipse.jdt.internal.ui.text.java.hover.BestMatchHover.getHoverInfo2(BestMatchHover.java:130)
-	at org.eclipse.jdt.internal.ui.text.java.hover.JavaEditorTextHoverProxy.getHoverInfo2(JavaEditorTextHoverProxy.java:89)
-	at org.eclipse.jface.text.TextViewerHoverManager$1.run(TextViewerHoverManager.java:155)
+	at org.eclipse.wst.validation.internal.EventManager.postAutoChange(EventManager.java:182)
+	at org.eclipse.wst.validation.internal.EventManager.resourceChanged(EventManager.java:250)
+	at org.eclipse.core.internal.events.NotificationManager$1.run(NotificationManager.java:321)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:47)
+	at org.eclipse.core.internal.events.NotificationManager.notify(NotificationManager.java:311)
+	at org.eclipse.core.internal.events.NotificationManager.broadcastChanges(NotificationManager.java:174)
+	at org.eclipse.core.internal.resources.Workspace.broadcastBuildEvent(Workspace.java:445)
+	at org.eclipse.core.internal.events.AutoBuildJob.doBuild(AutoBuildJob.java:202)
+	at org.eclipse.core.internal.events.AutoBuildJob.run(AutoBuildJob.java:300)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
 Caused by: java.lang.NoClassDefFoundError: Could not initialize class aQute.bnd.osgi.Verifier
 	at org.eclipse.pde.bnd.ui.internal.Auxiliary.doImport(Auxiliary.java:113)
 	at org.eclipse.pde.bnd.ui.internal.Auxiliary$1.addingBundle(Auxiliary.java:60)
@@ -81,7 +67,7 @@ Caused by: java.lang.NoClassDefFoundError: Could not initialize class aQute.bnd.
 	at org.osgi.util.tracker.BundleTracker.open(BundleTracker.java:161)
 	at org.eclipse.pde.bnd.ui.internal.Auxiliary.<init>(Auxiliary.java:68)
 	at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
-	... 56 more
+	... 42 more
 Caused by: java.lang.ExceptionInInitializerError: Exception java.lang.LinkageError: loader constraint violation: when resolving method 'org.slf4j.ILoggerFactory org.slf4j.impl.StaticLoggerBinder.getLoggerFactory()' the class loader org.eclipse.osgi.internal.loader.EquinoxClassLoader @709bd0ab of the current class, org/slf4j/LoggerFactory, and the class loader org.eclipse.osgi.internal.loader.EquinoxClassLoader @6880774b for the method's defining class, org/slf4j/impl/StaticLoggerBinder, have different Class objects for the type org/slf4j/ILoggerFactory used in the signature (org.slf4j.LoggerFactory is in unnamed module of loader org.eclipse.osgi.internal.loader.EquinoxClassLoader @709bd0ab, parent loader 'platform'; org.slf4j.impl.StaticLoggerBinder is in unnamed module of loader org.eclipse.osgi.internal.loader.EquinoxClassLoader @6880774b, parent loader 'platform') [in thread "Start Level: Equinox Container: 759f743d-cf10-4b85-b0c0-e11c82ec8eab"]
 	at org.slf4j.LoggerFactory.getILoggerFactory(LoggerFactory.java:423)
 	at org.slf4j.LoggerFactory.getLogger(LoggerFactory.java:362)
@@ -198,30 +184,16 @@ java.lang.NoClassDefFoundError: Could not initialize class aQute.bnd.osgi.Verifi
 	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:434)
 	at org.eclipse.osgi.internal.loader.ModuleClassLoader.loadClass(ModuleClassLoader.java:174)
 	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:526)
-	at org.eclipse.jdt.internal.compiler.ast.Statement.containsPatternVariable(Statement.java:510)
-	at org.eclipse.jdt.internal.compiler.ast.Statement.containsPatternVariable(Statement.java:506)
-	at org.eclipse.jdt.internal.codeassist.impl.AssistParser.buildInitialRecoveryState(AssistParser.java:368)
-	at org.eclipse.jdt.internal.compiler.parser.Parser.resumeOnSyntaxError(Parser.java:14054)
-	at org.eclipse.jdt.internal.compiler.parser.Parser.parse(Parser.java:12590)
-	at org.eclipse.jdt.internal.codeassist.impl.AssistParser.parseBlockStatements(AssistParser.java:2112)
-	at org.eclipse.jdt.internal.codeassist.impl.AssistParser.parseBlockStatements(AssistParser.java:1948)
-	at org.eclipse.jdt.internal.codeassist.impl.Engine.parseBlockStatements(Engine.java:350)
-	at org.eclipse.jdt.internal.codeassist.impl.Engine.parseBlockStatements(Engine.java:313)
-	at org.eclipse.jdt.internal.codeassist.SelectionEngine.select(SelectionEngine.java:1080)
-	at org.eclipse.jdt.internal.core.Openable.codeSelect(Openable.java:166)
-	at org.eclipse.jdt.internal.core.CompilationUnit.codeSelect(CompilationUnit.java:382)
-	at org.eclipse.jdt.internal.core.CompilationUnit.codeSelect(CompilationUnit.java:375)
-	at org.eclipse.jdt.internal.ui.text.java.hover.AbstractJavaEditorTextHover.getJavaElementsAt(AbstractJavaEditorTextHover.java:121)
-	at org.eclipse.jdt.internal.ui.text.java.hover.JavadocHover.lambda$0(JavadocHover.java:713)
-	at org.eclipse.jdt.internal.core.JavaModelManager.cacheZipFiles(JavaModelManager.java:5770)
-	at org.eclipse.jdt.internal.core.JavaModelManager.callReadOnly(JavaModelManager.java:5759)
-	at org.eclipse.jdt.core.JavaCore.callReadOnly(JavaCore.java:6188)
-	at org.eclipse.jdt.internal.ui.text.java.hover.JavadocHover.internalGetHoverInfo(JavadocHover.java:713)
-	at org.eclipse.jdt.internal.ui.text.java.hover.JavadocHover.getHoverInfo2(JavadocHover.java:709)
-	at org.eclipse.jdt.internal.ui.text.java.hover.BestMatchHover.getHoverInfo2(BestMatchHover.java:163)
-	at org.eclipse.jdt.internal.ui.text.java.hover.BestMatchHover.getHoverInfo2(BestMatchHover.java:130)
-	at org.eclipse.jdt.internal.ui.text.java.hover.JavaEditorTextHoverProxy.getHoverInfo2(JavaEditorTextHoverProxy.java:89)
-	at org.eclipse.jface.text.TextViewerHoverManager$1.run(TextViewerHoverManager.java:155)
+	at org.eclipse.wst.validation.internal.EventManager.postAutoChange(EventManager.java:182)
+	at org.eclipse.wst.validation.internal.EventManager.resourceChanged(EventManager.java:250)
+	at org.eclipse.core.internal.events.NotificationManager$1.run(NotificationManager.java:321)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:47)
+	at org.eclipse.core.internal.events.NotificationManager.notify(NotificationManager.java:311)
+	at org.eclipse.core.internal.events.NotificationManager.broadcastChanges(NotificationManager.java:174)
+	at org.eclipse.core.internal.resources.Workspace.broadcastBuildEvent(Workspace.java:445)
+	at org.eclipse.core.internal.events.AutoBuildJob.doBuild(AutoBuildJob.java:202)
+	at org.eclipse.core.internal.events.AutoBuildJob.run(AutoBuildJob.java:300)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
 Caused by: java.lang.ExceptionInInitializerError: Exception java.lang.LinkageError: loader constraint violation: when resolving method 'org.slf4j.ILoggerFactory org.slf4j.impl.StaticLoggerBinder.getLoggerFactory()' the class loader org.eclipse.osgi.internal.loader.EquinoxClassLoader @709bd0ab of the current class, org/slf4j/LoggerFactory, and the class loader org.eclipse.osgi.internal.loader.EquinoxClassLoader @6880774b for the method's defining class, org/slf4j/impl/StaticLoggerBinder, have different Class objects for the type org/slf4j/ILoggerFactory used in the signature (org.slf4j.LoggerFactory is in unnamed module of loader org.eclipse.osgi.internal.loader.EquinoxClassLoader @709bd0ab, parent loader 'platform'; org.slf4j.impl.StaticLoggerBinder is in unnamed module of loader org.eclipse.osgi.internal.loader.EquinoxClassLoader @6880774b, parent loader 'platform') [in thread "Start Level: Equinox Container: 759f743d-cf10-4b85-b0c0-e11c82ec8eab"]
 	at org.slf4j.LoggerFactory.getILoggerFactory(LoggerFactory.java:423)
 	at org.slf4j.LoggerFactory.getLogger(LoggerFactory.java:362)
